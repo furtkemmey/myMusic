@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     // MARK: - IBAction
     @IBAction func playNPauseAction(_ sender: UIButton) {
+        audioPlayer.play()
     }
 
     @IBAction func stopPlay(_ sender: UIButton) {
@@ -36,13 +37,32 @@ class ViewController: UIViewController {
         let notificationCenterDefault = NotificationCenter.default
         // add observer
         notificationCenterDefault.addObserver(self, selector: #selector(audioInterrupted(_:)), name: .AVAudioSessionInterruption, object: nil)
+
+        let filePath = Bundle.main.path(forResource: "music", ofType: "mp3")
+        print("filePath= \(String(describing: filePath))")
+        let fileData = NSData(contentsOfFile: filePath!) //convert to DataType
+
+        //Audio Session
+        do{
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: .allowAirPlay) //get instance
+        } catch {
+            print("setCategory error= \(error.localizedDescription)")
+        }
+
+        // AVAudio Player
+        do {
+            audioPlayer =  try AVAudioPlayer(data: fileData! as Data)
+        } catch {
+            print("AVAudioPlayer error= \(error.localizedDescription)")
+        }
+        audioPlayer.prepareToPlay()
     }
 
     // add "@objc" by "#selector"
     @objc func audioInterrupted(_ notification: Notification) {
-
-
+        print("message \(String(describing: notification.userInfo))")
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
