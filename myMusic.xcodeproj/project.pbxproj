@@ -49,6 +49,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		721D4AD5203122300089D5FC /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				728D91EF2029876700CA3E18 /* AppDelegate.swift */,
+				728D91F62029876700CA3E18 /* Assets.xcassets */,
+				728D91F82029876700CA3E18 /* LaunchScreen.storyboard */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		721D4AD6203122480089D5FC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				728D920E2029879E00CA3E18 /* music.mp3 */,
+				728D92012029879500CA3E18 /* images */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		728D91E32029876700CA3E18 = {
 			isa = PBXGroup;
 			children = (
@@ -68,13 +87,10 @@
 		728D91EE2029876700CA3E18 /* myMusic */ = {
 			isa = PBXGroup;
 			children = (
-				728D920E2029879E00CA3E18 /* music.mp3 */,
-				728D92012029879500CA3E18 /* images */,
-				728D91EF2029876700CA3E18 /* AppDelegate.swift */,
 				728D91F12029876700CA3E18 /* ViewController.swift */,
 				728D91F32029876700CA3E18 /* Main.storyboard */,
-				728D91F62029876700CA3E18 /* Assets.xcassets */,
-				728D91F82029876700CA3E18 /* LaunchScreen.storyboard */,
+				721D4AD6203122480089D5FC /* Resource */,
+				721D4AD5203122300089D5FC /* Supporting */,
 				728D91FB2029876700CA3E18 /* Info.plist */,
 			);
 			path = myMusic;
@@ -126,6 +142,11 @@
 					728D91EB2029876700CA3E18 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -311,7 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2DV9652W7L;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = myMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.yvtc.HKC.myMusic;
@@ -326,7 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2DV9652W7L;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = myMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.yvtc.HKC.myMusic;
